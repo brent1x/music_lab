@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <ul>
+      <% @musicians.each do |musician| %>
+      <li>
+        <a href="/musicians/<%=musician.id%>"><%= musician.name %></a>
+      </li>
+      <% end %>
+    </ul>
+    <a href="/musicians/new">Add new snack</a>
+  </body>
+</html>
