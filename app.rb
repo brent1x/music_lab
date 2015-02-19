@@ -11,37 +11,36 @@ get '/musicians' do
   erb :index
 end
 
-## 
-
-get '/snacks/new' do
+get '/musicians/new' do
   erb :new
 end
 
-get '/snacks/:id' do
-  @snack = Snack.find(params[:id])
+## 
+
+get '/musicians/:id' do
+  @musician = Musician.find(params[:id])
   erb :show
 end
 
-get '/snacks/:id/edit' do
-  @snack = Snack.find(params[:id])
+get '/musicians/:id/edit' do
+  @musician = Musician.find(params[:id])
   erb :edit
 end
 
-post '/snacks' do
-  Snack.create({:name => params[:snack_name]})
-  redirect '/snacks'
+post '/musicians' do
+  Musician.create({:name => params[:name]})
+  redirect '/musicians'
 end
 
-put '/snacks/:id' do
-  snack = Snack.find(params[:id])
-  snack.name = params[:snack_name]
-  snack.save
-  # could have also used update()
-  redirect '/snacks'
+put '/musicians/:id' do
+  musician = Musician.find(params[:id])
+  musician.name = params[:name]
+  musician.save
+  redirect '/musicians'
 end
 
-delete '/snacks/:id' do
-  snack = Snack.find(params[:id])
-  snack.destroy
-  redirect '/snacks'
+delete '/musicians/:id' do
+  musician = Musician.find(params[:id])
+  musician.destroy
+  redirect '/musicians'
 end

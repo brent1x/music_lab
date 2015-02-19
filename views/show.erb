@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+  <head><title></title></head>
+  <body>
+    <h1>Musician I like: <%= @musician.name %></h1>
+    <a href="/musicians/<%=@musician.id%>/edit">Edit</a>
+    <form action="/musicians/<%=@musician.id%>" method="POST" style="display:inline-block;">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Delete">
+    </form>
+  </body>
+</html>

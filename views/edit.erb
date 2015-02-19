@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+  <head><title></title></head>
+  <body>
+    <h1>Edit this bro or bro-ette</h1>
+    <form action="/musicians/<%=@musician.id%>" method="POST">
+      <input type="hidden" name="_method" value="PUT">
+      <input type="text" name="name" value="<%=@musician.name%>">
+      <input type="submit" value="Change">
+    </form>
+  </body>
+</html>
